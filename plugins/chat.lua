@@ -11,11 +11,12 @@ local function run(msg, matches)
       else
         return "خداحافظ"
       end
-          elseif msg.text == "سلام" then
+    elseif msg.text == "سلام" then
       if is_sudo(msg) then
         return "سلام مامانی جونم "
       else
-        return "خدافس"
+        return "سلام "
+        end
     elseif msg.text == "bye" then
       if is_sudo(msg) then
         return "اودافظ مامانی جونم "
