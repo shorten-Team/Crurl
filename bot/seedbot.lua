@@ -223,6 +223,11 @@ function create_config( )
     "download_media",
     "invite",
     "all",
+    "info",
+    "chat",
+    "plugins",
+    "tagall",
+    "addplugin",
     "leave_ban",
     "admin"
     },
