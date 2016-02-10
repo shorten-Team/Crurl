@@ -5,7 +5,7 @@ local function run(msg, matches)
     return "شما دسترسی ارسال فایل به سرور را ندارید\nSudo : @ninaco"
   end
   local receiver = get_receiver(msg)
-  if matches[1] == 'up' then
+  if matches[1] == 'send' then
     
     local file = matches[3]
     
@@ -57,9 +57,9 @@ return {
     "!send dev : Envía una foto del desarrollador"
   },
   patterns = {
-  "^[!/](up) (.*) (.*) (.*)$",
-  "^[!/](up) (.*) (.*)$",
-  "^[!/](up) (.*)$",
+  "^[!/](send) (.*) (.*) (.*)$",
+  "^[!/](send) (.*) (.*)$",
+  "^[!/](send) (.*)$",
   "^[!/](list) (files)$",
   "^[!/](extensions)$"
   },
