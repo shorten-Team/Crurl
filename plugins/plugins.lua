@@ -105,7 +105,7 @@ local function disable_plugin( name, chat )
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
   if not k then
-    return 'Plugin '..name..' not enabled'
+    return 'پلاگین '..name..' غیرفعال است'
   end
   -- Disable and reload
   table.remove(_config.enabled_plugins, k)
@@ -129,12 +129,12 @@ local function disable_plugin_on_chat(receiver, plugin)
   _config.disabled_plugin_on_chat[receiver][plugin] = true
 
   save_config()
-  return 'Plugin '..plugin..' disabled on this chat'
+  return 'پلاگین '..plugin..' در این گروه غیرفعال شد'
 end
 
 local function reenable_plugin_on_chat(receiver, plugin)
   if not _config.disabled_plugin_on_chat then
-    return 'There aren\'t any disabled plugins'
+    return 'این پلاگین غیرفعال است'
   end
 
   if not _config.disabled_plugin_on_chat[receiver] then
@@ -147,7 +147,7 @@ local function reenable_plugin_on_chat(receiver, plugin)
 
   _config.disabled_plugin_on_chat[receiver][plugin] = false
   save_config()
-  return 'Plugin '..plugin..' is enabled again'
+  return 'پلاگین '..plugin..' دوباره فعال شد'
 end
 
 local function run(msg, matches)
