@@ -44,7 +44,7 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'\n@hextorbot'
+  text = text..'\n@hextorbot team'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
 	send_msg(extra.receiver, extra.user..' نام کاربری مورد نظر یافت نشد.', ok_cb, false)
@@ -122,7 +122,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
   local um_hash = 'msgs:'..result.from.id..':'..result.to.id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'\n@hextorbot'
+  text = text..'\n@hextorbot team'
   send_msg(extra.receiver, text, ok_cb, true)
 end
 
@@ -195,7 +195,7 @@ local function run(msg, matches)
 	 text = text..'نام گروه : '..msg.to.title..'\n'
      text = text..'ایدی گروه : '..msg.to.id
     end
-   text = text..'\n@hextorbot'
+   text = text..'\n@hextorbot team'
     return send_msg(receiver, text, ok_cb, true)
     end
   end
