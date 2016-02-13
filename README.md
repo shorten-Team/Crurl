@@ -19,7 +19,7 @@
 * **And ...**
 
 **Table of Contents** 
-- [TeleSeed](#Hextor)
+- [Hextor](#Hextor)
 - [Features](#features)
 - [Commands](#commands)
 	- [Admins commands](#admins-commands)
