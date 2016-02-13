@@ -1036,16 +1036,16 @@ local function run(msg, matches)
     end	
 
   --[[if matches[1] == 'public' then
-    local target = msg.to.id
-    if matches[2] == 'yes' then
-      savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
-      return set_public_membermod(msg, data, target)
-    end
-    if matches[2] == 'no' then
-      savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: not public")
-      return unset_public_membermod(msg, data, target)
-    end
-  end]]
+    -local target = msg.to.id
+   - if matches[2] == 'yes' then
+     - savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
+     - return set_public_membermod(msg, data, target)
+   - end
+   - if matches[2] == 'no' then
+   -   savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: not public")
+  - -  return unset_public_membermod(msg, data, target)
+  -  end
+  -end]]
 
     if matches[1] == 'newlink' and not is_realm(msg) then
       if not is_momod(msg) then
@@ -1078,13 +1078,25 @@ local function run(msg, matches)
     if matches[1] == 'linkpv' then
       if not is_owner(msg) then
         return "شما دسترسی ندارید"
-      end
+       end
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       if not group_link then 
         return "ابتدا با دستور!newlink لینک گروه را ایجاد کنید!"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
      send_large_msg('user#id'..msg.from.id, "لینک دعوت به گروه\n"..group_link)
+    return "لینک با موفقیت ارسال شد"
+end
+if matches[1] == 'linkpv' then
+   local group_link = data[tostring(msg.to.id)]['settings']['set_link']
+      if not group_link then 
+        return "ابتدا با دستور!newlink لینک گروه را ایجاد کنید!"
+       end
+       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
+     send_large_msg('user#id'..msg.from.id, "لینک دعوت به گروه\n"..group_link)
+    return 
+else
+    return "لینک با موفقیت ارسال شد"
     end
     if matches[1] == 'setowner' and matches[2] then
       if not is_owner(msg) then
