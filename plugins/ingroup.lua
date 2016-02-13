@@ -1094,9 +1094,7 @@ if matches[1] == 'linkpv' then
        end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
      send_large_msg('user#id'..msg.from.id, "لینک دعوت به گروه\n"..group_link)
-    return 
-else
-    return "لینک با موفقیت ارسال شد"
+    return ""
     end
     if matches[1] == 'setowner' and matches[2] then
       if not is_owner(msg) then
