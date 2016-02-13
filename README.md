@@ -1,8 +1,5 @@
-# [TeleSeed](https://telegram.me/TeleSeed) 
+# [HEXTOR|BOT](https://telegram.me/HEXTORBOT) 
 
-[![Join the chat at https://gitter.im/SEEDTEAM/TeleSeed](https://badges.gitter.im/SEEDTEAM/TeleSeed.svg)](https://gitter.im/SEEDTEAM/TeleSeed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-**An advance and powerful Administration bot based on [yagop/telegram-bot](https://github.com/yagop/telegram-bot) licensed under [GNU General public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**
 # Features
 
 * **A powerful Anti spam with custom sensitivity For each group**
@@ -10,7 +7,7 @@
 * **recalcitrant to any kind of spamming(Xy bots,name|photo changers and ...)**
 * **Global ban**
 * **Broadcast to all groups**
-* **Group link**
+* **Group link(link to pv)**
 * **Kick,ban and unban by reply**
 * **Groups,ban and global bans list**
 * **Logging anything that happens in group !**
@@ -18,10 +15,11 @@
 * **Group administration in bots private**
 * **Only mods,owner and admin can add bots**
 * **Arabic lock**
+* **filtering**
 * **And ...**
 
 **Table of Contents** 
-- [TeleSeed](#teleseed)
+- [TeleSeed](#Hextor)
 - [Features](#features)
 - [Commands](#commands)
 	- [Admins commands](#admins-commands)
@@ -84,11 +82,11 @@
 - [Support and development](#support-and-development)
 - [Special thanks to:](#special-thanks-to)
 - [Our team!](#our-team-)
-
+- [join support] (#Join)
 
 # Commands 
 ## Admins commands
-**Only admins and sudo users can run these commands**
+**Only sudo users can run these commands**
 ### Group creation
 >[!/]creategroup [group name]
 >
@@ -296,6 +294,8 @@ _Sudo users and admins can also use this commands in all groups_
 >
 >[!/]link
 >>This command will return group link
+>!linkpv
+>> Only Owners can use this plugin
 
 ### Promote and demote mods
 >[!/]promote [username]
@@ -335,6 +335,12 @@ _Sudo users and admins can also use this commands in all groups_
 
 ###Help 
 >[!/]help
+
+###Filtering
+>Filter + TEX
+>Filter - TEX
+>Filterlist
+>>filtering tests to group
 
 ### Owner
 >[!/]owner 
@@ -427,46 +433,8 @@ _Sudo users and admins can also use this commands in all groups_
 
 
 **U can use both "/" and "!"**
-
-# Installation 
-
-```bash
-# Tested on Ubuntu 14.04, for other OSs check out https://github.com/yagop/telegram-bot/wiki/Installation
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev
 ```
-
-```bash
-# lets install the bot
-cd $HOME
-git clone https://github.com/SEEDTEAM/TeleSeed.git
-cd TeleSeed
-chmod +x launch.sh
-./launch.sh install
-./launch.sh # Enter a phone number & confirmation code.
-```
-### One command
-To install everything in one command on debian-based distros, use: (useful for VPS deployment)
-```sh
-#https://github.com/yagop/telegram-bot/wiki/Installation
-sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/SEEDTEAM/TeleSeed.git && cd TeleSeed && chmod +x launch.sh && ./launch.sh install && ./launch.sh
-```
-### Realm configuration 
-
-After you ran bot for first time, go to bot and use !id command
-
-Get your id then, stop bot
-
-open file ./data/config.lua 
-
-add your id to the "sudo_users" section in the following format:
-```
-  sudo_users = {
-    110626080,
-    103649648,
-    111020322,
-    0,
-    YourID
-  }
+  sudo_users = 83817319 ([minaco](http://telegrram.me/minaco))
 ```
 then start the bot again
 
@@ -475,34 +443,19 @@ Create a realm using !createrealm command
 
 # Support and development
 
-Check out this tutorial by: [Telegram Geeks](http://telegramgeeks.com/2016/01/teleseed-tutorial/) for further assistance with setup and installation.
-
 Do not contact **us** In private for support.
-Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
 
-_If you are using /join service for first time you have to send it 11 times ( Bot is spam reported )_
+#Join
+join our bot development group by join channel [@hextorbot](https://telegram.me/hextorbot) and joined to suppoer group by link
 
 # Special thanks to
-[@seyedan25](https://telegram.me/seyedan25)
+[@ali_ghoghnoos](https://telegram.me/ali_ghoghnoos)
+[@Dragon_Born](https://telegram.me/Dragon_Born)
+[@digitalboys](https://telegram.me/digitalboys)
+[@@Arsalan_sahel](https://telegram.me/Arsalan_sahel)
 
-For Managing [@teleseed](https://telegram.me/TeleSeed) on Telegram
 
-[@Vamptacus](https://telegram.me/Vamptacus)
+For Managing [@hextor](https://telegram.me/hextor) on Telegram
 
-For graphic designs
 
-[@topkecleon](https://github.com/topkecleon)
-
-[@JuanPotato](https://github.com/JuanPotato)
-
-# Our team!
-
-[Alphonse](https://github.com/hmon) ([Telegram](https://telegram.me/iwals))
-
-[I M /-\ N](https://github.com/imandaneshi) ([Telegram](https://telegram.me/imandaneshi))
-
-[Siyanew](https://github.com/Siyanew) ([Telegram](https://telegram.me/Siyanew))
-
-[Rondoozle](https://github.com/Rondoozle) ([Telegram](https://telegram.me/Rondoozle))
-
-Our Telegram cahnnels > English: [@TeleSeedCH](https://telegram.me/teleseedch) Persian: [@IranSeed](https://telegram.me/iranseed)
+Our Telegram cahnnels > Farsi: [@hextor](https://telegram.me/hextor)
