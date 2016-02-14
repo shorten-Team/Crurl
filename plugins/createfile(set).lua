@@ -1,12 +1,12 @@
 do
  local function save_file(name, text)
-    local file = io.open("./data/create/"..name, "w")
+    local file = io.open("./data/echo/"..name, "w")
     file:write(text)
     file:flush()
     file:close()
 end   
 function run(msg, matches)
-  if matches[1] == "create" and is_sudo(msg) then
+  if matches[1] == "echo>" and is_sudo(msg) then
  
          local name = matches[2]
         local text = matches[3]
@@ -15,7 +15,7 @@ function run(msg, matches)
    end
 return {
   patterns = {
-  "^[/!](create) ([^%s]+) (.+)$"
+  "^[/!](echo>) ([^%s]+) (.+)$"
 
   },
   run = run
