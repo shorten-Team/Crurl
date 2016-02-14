@@ -1,13 +1,13 @@
 do
 function run(msg, matches)
-if matches[1]:lower() == 'sbss' then -- Put everything you like :)
-send_document(get_receiver(msg), "./files/sticker.webp", ok_cb, false)
-return 'test'
+if matches[1]:lower() == 'hextor' then -- Put everything you like :)
+send_document(get_receiver(msg), "./Data/sticker/sticker.webp", ok_cb, false)
+return 'HEXTOR BOT'
 end
 end
 return {
 patterns = {
-"^[Ss][Bb][Ss][Ss]$"
+"^[Hh][Ee][Xx][Tt][Oo][Rr]$"
 },
 run = run
 }
@@ -16,4 +16,3 @@ end
 --upload a picture with webp format
 --change file name to sticker.webp
 --enjoy
---special thank to mehr pouya and gamer team
