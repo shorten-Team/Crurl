@@ -4,11 +4,11 @@ function run(msg, matches)
   return [[
   👒HEXTOR‮‮👒™
 ~~~~~~~~~~~
-👥Sudo:@minaco1
+👥Sudo:@minaco
 ÷÷÷÷÷÷÷÷÷÷÷÷
 Ⓜ️admins:
-⛑@shervin35 
-〽️@ali_ghoghnoos 
+⛑️@ali_ghoghnoo
+〽@dadasalar 
 
 💢برای خرید گروه با ربات قدرتمند HEXTOR به سودو ها مراجعه کنید 💢
 
