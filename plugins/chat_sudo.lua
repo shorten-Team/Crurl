@@ -3,7 +3,7 @@ local function run(msg, matches)
       if is_sudo(msg) then
         return "سلام مامانی"
       else
-        return "سلام"
+        return "salam mamani ^_^"
       end
     elseif msg.text == "بای" then
       if is_sudo(msg) then
@@ -15,11 +15,11 @@ local function run(msg, matches)
       if is_sudo(msg) then
         return "سلام مامانی جونم "
       else
-        return "خدافس"
+        return "سلام"
         end
     elseif msg.text == "bye" then
       if is_sudo(msg) then
-        return "اودافظ مامانی جونم "
+        return "^_^ اودافظ مامانی جونم "
       else
         return "خدا نگه دار"
       end
