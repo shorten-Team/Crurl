@@ -1,6 +1,6 @@
 
 do
-local Arian = 83817319 --put your id here(BOT OWNER ID)
+local Arian = 184413821,117625029
 
 local function setrank(msg, name, value) -- setrank function
   local hash = nil
@@ -44,7 +44,7 @@ local value = redis:hget(hash, result.id)
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'\n@hextorbot team'
+  text = text..'\n@hextor team'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
 	send_msg(extra.receiver, extra.user..' نام کاربری مورد نظر یافت نشد.', ok_cb, false)
@@ -122,7 +122,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
   local um_hash = 'msgs:'..result.from.id..':'..result.to.id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'\n@hextorbot team'
+  text = text..'\n@hextor team'
   send_msg(extra.receiver, text, ok_cb, true)
 end
 
@@ -136,7 +136,7 @@ local function run(msg, matches)
   local hash = 'usecommands:'..msg.from.id..':'..msg.to.id
   redis:incr(hash)
   if not is_sudo(msg) then
-    return "فقط صاحب ربات اجازه مقام دهی را دارد"
+    return "فقط صاحب ربات اجازه مقام دهی را د"
   end
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
@@ -195,7 +195,7 @@ local function run(msg, matches)
 	 text = text..'نام گروه : '..msg.to.title..'\n'
      text = text..'ایدی گروه : '..msg.to.id
     end
-   text = text..'\n@hextorbot team'
+   text = text..'\n@hextor team'
     return send_msg(receiver, text, ok_cb, true)
     end
   end
