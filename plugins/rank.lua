@@ -5,7 +5,7 @@ local Arian = 83817319 --put your id here(BOT OWNER ID)
 local function setrank(msg, name, value) -- setrank function
   local hash = nil
   if msg.to.type == 'chat' then
-    hash = 'rank:'..msg.to.id..':variables'
+  hash = 'rank:variables' 
   end
   if hash then
     redis:hset(hash, name, value)
@@ -22,8 +22,8 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
     local text = 'نام کامل : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
                ..'یوزر: '..Username..'\n'
                ..'ایدی کاربری : '..result.id..'\n\n'
-	local hash = 'rank:'..extra.chat2..':variables'
-	local value = redis:hget(hash, result.id)
+    hash = 'rank:variables'
+local value = redis:hget(hash, result.id)
     if not value then
 	 if result.id == tonumber(Arian) then
 	   text = text..'مقام : مدیر کل ربات (Executive Admin) \n\n'
@@ -61,7 +61,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
     local text = 'نام کامل : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
                ..'یوزر: '..Username..'\n'
                ..'ایدی کاربری : '..result.id..'\n\n'
-  local hash = 'rank:'..extra.chat2..':variables'
+  local hash = 'rank:variables'
   local value = redis:hget(hash, result.id)
   if not value then
 	 if result.id == tonumber(Arian) then
@@ -99,7 +99,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
     local text = 'نام کامل : '..(result.from.first_name or '')..' '..(result.from.last_name or '')..'\n'
                ..'یوزر: '..Username..'\n'
                ..'ایدی کاربری : '..result.from.id..'\n\n'
-	local hash = 'rank:'..result.to.id..':variables'
+	local hash = 'rank:variables'
 		local value = redis:hget(hash, result.from.id)
 		 if not value then
 		    if result.from.id == tonumber(Arian) then
@@ -135,8 +135,8 @@ local function run(msg, matches)
  if matches[1]:lower() == 'setrank' then
   local hash = 'usecommands:'..msg.from.id..':'..msg.to.id
   redis:incr(hash)
-  if not is_owner(msg) then
-    return "تنها برای صاحبان گروه مجاز است"
+  if not is_sudo(msg) then
+    return "فقط صاحب ربات اجازه مقام دهی را دارد"
   end
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
@@ -166,7 +166,7 @@ local function run(msg, matches)
    local text = text..'فامیل : '..(msg.from.last_name or 'ندارد')..'\n'	
    local text = text..'یوزر : '..Username..'\n'
    local text = text..'ایدی کاربری : '..msg.from.id..'\n\n'
-   local hash = 'rank:'..msg.to.id..':variables'
+   local hash = 'rank:variables'
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
