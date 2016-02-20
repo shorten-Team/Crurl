@@ -5,7 +5,7 @@ local function run(msg, matches)
     return "شما دسترسی ارسال فایل به سرور را ندارید\nSudo : @ninaco"
   end
   local receiver = get_receiver(msg)
-  if matches[1] == 'send' then
+  if matches[1] == 'dl' then
     
     local file = matches[3]
     
@@ -31,7 +31,7 @@ local function run(msg, matches)
   end
   
   if matches[1] == 'extensions' then
-    return 'No disponible actualmente'
+    return 'یافت نشد'
   end
   
   if matches[1] == 'list' and matches[2] == 'files' then
@@ -45,21 +45,15 @@ return {
   usage = {
     "!list files : Envía un archivo con los nombres de todo lo que se puede enviar",
     "!extensions : Envía un mensaje con las extensiones para cada tipo de archivo permitidas",
-    "➖➖➖➖➖➖➖➖➖➖",
-    "!send sticker <nombre del sticker> : Envía ese sticker del servidor",
-    "!send photo <nombre de la foto> <extension de la foto> : Envía esa foto del servidor",
-    "!send GIF <nombre del GIF> : Envía ese GIF del servidor",
-    "!send music <nombre de la canción <extension de la canción> : Envía esa canción del servidor",
-    "!send video <nombre del video> <extension del video> : Envía ese video del servidor",
-    "!send file <nombre del archivo> <extension del archivo> : Envía ese archivo del servidor",
-    "!send plugin <Nombre del plugin> : Envía ese archivo del servidor",
-    "!send manual <Ruta de archivo> <Nombre del plugin> : Envía un archivo desde el directorio TeleSeed",
-    "!send dev : Envía una foto del desarrollador"
+    "!dl sticker <nombre del sticker> : Envía ese sticker del servidor",
+    "!dl file <nombre del archivo> <extension del archivo> : Envía ese archivo del servidor",
+    "!dl plugin <Nombre del plugin> : Envía ese archivo del servidor",
+    "!dl manual <Ruta de archivo> <Nombre del plugin> : Envía un archivo desde el directorio TeleSeed",
   },
   patterns = {
-  "^[!/](send) (.*) (.*) (.*)$",
-  "^[!/](send) (.*) (.*)$",
-  "^[!/](send) (.*)$",
+  "^[!/](dl) (.*) (.*) (.*)$",
+  "^[!/](dl) (.*) (.*)$",
+  "^[!/](dl) (.*)$",
   "^[!/](list) (files)$",
   "^[!/](extensions)$"
   },
