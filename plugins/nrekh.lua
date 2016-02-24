@@ -13,9 +13,10 @@ function run(msg, matches)
 🌹در روز های خاص گپ رایگان داده میشود🌹
 
 🌺لینک کانال جهت دریافت اخبار🌺
-@hextorbot
-😎ادمین ها😎@
-minaco]]
+https://telegram.me/Channel_CRUEL_BoT
+
+😎sudo : @cruel0098 😎
+]]
 end
 
 return {
