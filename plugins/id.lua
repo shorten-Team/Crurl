@@ -30,7 +30,7 @@ end
 local function run(msg, matches)
   local receiver = get_receiver(msg)
   if matches[1] == "!id" then
-    local text = user_print_name(msg.from) .. ' (user#id' .. msg.from.id .. ')'
+    local text = user_print_name(msg.from) .. 'ID:' .. msg.from.id .. ''
     if is_chat_msg(msg) then
       text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (group ID:" .. msg.to.id  .. ")"
     end
