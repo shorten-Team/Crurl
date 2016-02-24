@@ -1,6 +1,6 @@
 
 do
-local Arian = 184413821,117625029
+local Arian = 188548712
 
 local function setrank(msg, name, value) -- setrank function
   local hash = nil
@@ -223,8 +223,8 @@ return {
 	'(Reply)!setrank <rank>: change members rank.',
   },
   patterns = {
-	"^[/!][Ii][Dd]$",
-	"^[/!][/!][Ii][Dd] (.*)$",
+	"^[/!]id$",
+	"^[/!]id (.*)$",
   },
   run = run
 }
