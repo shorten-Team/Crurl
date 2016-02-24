@@ -9,7 +9,7 @@ return {
   usage = "say [text] to [name]",
   patterns = {
     "^[Ss][Aa][Yy] (.*) [Tt][Oo] (.*)$",
-    "^بگو (.*) به (.*)$"
+    "^بگو$"
   }, 
   run = run 
 }
