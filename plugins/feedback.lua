@@ -21,7 +21,7 @@ if is_feedback then
          nameuser = msg.from.username
          nameuser2 = 'نام کاربری :'..msg.from.username..'\n\n'
    local msg = msggg..id2..name2..nameuser2
-   receiver = 'user#id83817319'
+   receiver = 'user#id122726012'
 
       send_large_msg(receiver, msg.."\n", ok_cb, false)
 return 'پیام شما با موفقیت ارسال و در صورت لزوم با شما تماس خواهد گرفته شد'
