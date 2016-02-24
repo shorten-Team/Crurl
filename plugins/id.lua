@@ -22,7 +22,7 @@ local function returnids(cb_extra, success, result)
   ..'There are '..result.members_num..' members'
   ..'\n---------\n'
   for k,v in pairs(result.members) do
-    text = text .. v.print_name .. " (user#id" .. v.id .. ")\n"
+    text = text .. v.print_name .. " (ID:" .. v.id .. ")\n"
   end
   send_large_msg(receiver, text)
 end
@@ -32,7 +32,7 @@ local function run(msg, matches)
   if matches[1] == "!id" then
     local text = user_print_name(msg.from) .. ' (user#id' .. msg.from.id .. ')'
     if is_chat_msg(msg) then
-      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (ID:" .. msg.to.id  .. ")"
+      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (group ID:" .. msg.to.id  .. ")"
     end
     return text
   elseif matches[1] == "chat" then
