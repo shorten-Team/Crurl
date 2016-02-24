@@ -1,7 +1,7 @@
    do
 
 function run(msg, matches)
-  return 'HEXTORBOT '.. VERSION .. [[
+  return 'CRUELBOT '.. VERSION .. [[
 
 👑 CRUEL BoT 👑
 ادمین های ربات:
