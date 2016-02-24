@@ -22,7 +22,7 @@ local function returnids(cb_extra, success, result)
   ..'There are '..result.members_num..' members'
   ..'\n---------\n'
   for k,v in pairs(result.members) do
-    text = text .. v.print_name .. " (user#id" .. v.id .. ")\n"
+    text = text .. v.print_name .. " (ID:" .. v.id .. ")\n"
   end
   send_large_msg(receiver, text)
 end
@@ -30,15 +30,15 @@ end
 local function run(msg, matches)
   local receiver = get_receiver(msg)
   if matches[1] == "!id" then
-    local text = user_print_name(msg.from) .. ' (user#id' .. msg.from.id .. ')'
+    local text = user_print_name(msg.from) .. ' (ID:' .. msg.from.id .. ')'
     if is_chat_msg(msg) then
-      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (chat#id" .. msg.to.id  .. ")"
+      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (group ID:" .. msg.to.id  .. ")"
     end
     return text
   elseif matches[1] == "chat" then
     -- !ids? (chat) (%d+)
     if matches[2] and is_sudo(msg) then
-      local chat = 'chat#id'..matches[2]
+      local chat = 'group ID:'..matches[2]
       chat_info(chat, returnids, {receiver=receiver})
     else
       if not is_chat_msg(msg) then
@@ -122,11 +122,11 @@ return {
     "!id members name <text>: Search for users with <text> on first_name, print_name or username on current chat"
   },
   patterns = {
-    "^!id$",
-    "^!ids? (chat) (%d+)$",
-    "^!ids? (chat)$",
-    "^!id (member) (@)(.+)",
-    "^!id (members) (name) (.+)"
+    "^[!/]id$",
+    "^[!/]ids? (chat) (%d+)$",
+    "^[!/]ids? (chat)$",
+    "^[!/]id (member) (@)(.+)",
+    "^[!/]id (members) (name) (.+)"
   },
   run = run
 }
