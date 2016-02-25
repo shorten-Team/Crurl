@@ -5,7 +5,7 @@ local function run(msg, matches)
     local num = matches[2]
      local text = matches[3]
         for i=1,num do
-            send_large_msg(receiver, text)
+            send_contact(get_receiver(msg), "+98 933 581 4643", "CRUEL", "BOT", ok_cb, false)
         end
   end
 end
