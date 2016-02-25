@@ -1,17 +1,19 @@
-do
+local function run(msg, matches)
+  local text = matches[1]
+  local b = 1
 
-function run(msg, matches)
-  return '' .. matches[1] .. ', ' .. matches[2] .. ''
+  while b ~= 0 do
+    text = text:trim()
+    text,b = text:gsub('^!+',`''`)
+  end
+  return text
 end
 
 return {
-  description = "Says anything to someone", 
-  usage = "say [text] to [name]",
+  description = "Simplest plugin ever!",
+  usage = "!echo [whatever]: echoes the msg",
   patterns = {
-    "^[Ss][Aa][Yy] (.*) [Tt][Oo] (.*)$",
-    "^بگو$"
+    "^!echo +(.+)$"
   }, 
   run = run 
 }
-
-end
