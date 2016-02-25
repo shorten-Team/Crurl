@@ -4,7 +4,7 @@ local function run(msg, matches)
 
   while b ~= 0 do
     text = text:trim()
-    text,b = text:gsub('^!+','``')
+    text,b = text:gsub('^!+','"`"`"')
   end
   return text
 end
@@ -14,6 +14,7 @@ return {
   usage = "!echo [whatever]: echoes the msg",
   patterns = {
     "^!echo +(.+)$"
+    "^بگو +(.+)$"
   }, 
   run = run 
 }
