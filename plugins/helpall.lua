@@ -97,7 +97,7 @@ end
  
 -- !help command
 local function telegram_help()
-  local text = "Umbrella Tools List:\n______________________________\n"
+  local text = "Cruel bot Tools List:\n______________________________\n"
   -- Plugins names
   for name in pairsByKeys(plugins) do
     if plugins[name].hidden then
@@ -108,8 +108,8 @@ local function telegram_help()
   end
   text = text..'______________________________'
   text = text..'\n'..'You can use < /helps > for view all items info or can use < /help (name) > for view a item info'
-  text = text..'\n'..'For see about Umbrella Bot Team, send < /ver >'
-  text = text..'\n'..'Sudo: @shayansoft Channel: @UmbrellaTeam'
+  text = text..'\n'..'For see about Cruel Bot Team, send < /ver >'
+  text = text..'\n'..'Sudo: @cruell0098 Channel: @Channel_CRUEL_BoT'
   return text
 end
  
